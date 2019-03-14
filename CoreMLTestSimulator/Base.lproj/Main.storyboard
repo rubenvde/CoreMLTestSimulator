@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreMLTestSimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGt-hh-W5R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pI5-tV-lUE" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1po-nX-QQ8">
+                                                <rect key="frame" x="0.0" y="25" width="375" height="41"/>
+                                                <string key="text">Welcome to the test simulator, 
+please select your model</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsj-QY-Eve">
+                                                <rect key="frame" x="0.0" y="332" width="375" height="30"/>
+                                                <state key="normal" title="Take the picture"/>
+                                                <connections>
+                                                    <action selector="openCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TRy-qL-PT2"/>
+                                                </connections>
+                                            </button>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZw-wn-2G3">
+                                                <rect key="frame" x="0.0" y="91" width="375" height="216"/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP3-wO-kHg">
+                                                <rect key="frame" x="8" y="387" width="359" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results - Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqp-xR-6yZ">
+                                                <rect key="frame" x="8" y="682" width="359" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GpO-3v-UuX">
+                                                <rect key="frame" x="75.5" y="433" width="224" height="224"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="224" id="88r-E6-WYQ"/>
+                                                    <constraint firstAttribute="width" constant="224" id="Xca-0L-whF"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1po-nX-QQ8" secondAttribute="trailing" id="7OA-Sn-S3Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="cqp-xR-6yZ" secondAttribute="trailing" constant="8" id="BkY-kl-XJ0"/>
+                                            <constraint firstItem="Nsj-QY-Eve" firstAttribute="leading" secondItem="pI5-tV-lUE" secondAttribute="leading" id="CU2-Ur-bgA"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nsj-QY-Eve" secondAttribute="trailing" id="Cdi-c9-54g"/>
+                                            <constraint firstItem="cqp-xR-6yZ" firstAttribute="leading" secondItem="pI5-tV-lUE" secondAttribute="leading" constant="8" id="Cm0-Sw-wbo"/>
+                                            <constraint firstAttribute="trailing" secondItem="iP3-wO-kHg" secondAttribute="trailing" constant="8" id="Cqr-Gq-m7C"/>
+                                            <constraint firstItem="1po-nX-QQ8" firstAttribute="leading" secondItem="pI5-tV-lUE" secondAttribute="leading" id="FzV-Q6-Oay"/>
+                                            <constraint firstItem="GpO-3v-UuX" firstAttribute="centerX" secondItem="pI5-tV-lUE" secondAttribute="centerX" id="KmQ-z9-f9j"/>
+                                            <constraint firstItem="cqp-xR-6yZ" firstAttribute="top" secondItem="GpO-3v-UuX" secondAttribute="bottom" constant="25" id="QHn-vg-r6t"/>
+                                            <constraint firstItem="zZw-wn-2G3" firstAttribute="leading" secondItem="pI5-tV-lUE" secondAttribute="leading" id="Ytn-Of-aaW"/>
+                                            <constraint firstItem="iP3-wO-kHg" firstAttribute="top" secondItem="Nsj-QY-Eve" secondAttribute="bottom" constant="25" id="Zad-jD-7Ay"/>
+                                            <constraint firstItem="zZw-wn-2G3" firstAttribute="top" secondItem="1po-nX-QQ8" secondAttribute="bottom" constant="25" id="bh5-9i-ixB"/>
+                                            <constraint firstAttribute="bottom" secondItem="cqp-xR-6yZ" secondAttribute="bottom" constant="197.5" id="dgq-Fc-dRd"/>
+                                            <constraint firstItem="Nsj-QY-Eve" firstAttribute="top" secondItem="zZw-wn-2G3" secondAttribute="bottom" constant="25" id="gq3-jK-mGU"/>
+                                            <constraint firstItem="GpO-3v-UuX" firstAttribute="top" secondItem="iP3-wO-kHg" secondAttribute="bottom" constant="25" id="i41-QG-k9c"/>
+                                            <constraint firstItem="iP3-wO-kHg" firstAttribute="leading" secondItem="pI5-tV-lUE" secondAttribute="leading" constant="8" id="lo8-6b-kdj"/>
+                                            <constraint firstItem="1po-nX-QQ8" firstAttribute="top" secondItem="pI5-tV-lUE" secondAttribute="top" constant="25" id="uxd-sm-4EH"/>
+                                            <constraint firstAttribute="trailing" secondItem="zZw-wn-2G3" secondAttribute="trailing" id="wog-lb-FF3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pI5-tV-lUE" firstAttribute="width" secondItem="JGt-hh-W5R" secondAttribute="width" id="8Q8-D8-s8M"/>
+                                    <constraint firstAttribute="bottom" secondItem="pI5-tV-lUE" secondAttribute="bottom" id="REb-Ja-fHB"/>
+                                    <constraint firstItem="pI5-tV-lUE" firstAttribute="leading" secondItem="JGt-hh-W5R" secondAttribute="leading" id="SsJ-KX-EWf"/>
+                                    <constraint firstItem="pI5-tV-lUE" firstAttribute="top" secondItem="JGt-hh-W5R" secondAttribute="top" id="XdG-Fe-a1a"/>
+                                    <constraint firstAttribute="trailing" secondItem="pI5-tV-lUE" secondAttribute="trailing" id="eOO-aE-hKl"/>
+                                    <constraint firstItem="pI5-tV-lUE" firstAttribute="height" secondItem="JGt-hh-W5R" secondAttribute="height" priority="250" id="ySk-As-aRn"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JGt-hh-W5R" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5cL-y0-9t2"/>
+                            <constraint firstItem="JGt-hh-W5R" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KK6-ci-hei"/>
+                            <constraint firstItem="JGt-hh-W5R" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="r1q-fa-FXi"/>
+                            <constraint firstItem="JGt-hh-W5R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sC5-d7-NfQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="900"/>
+                    <connections>
+                        <outlet property="imageView" destination="GpO-3v-UuX" id="UTD-7h-ooA"/>
+                        <outlet property="pickerView" destination="zZw-wn-2G3" id="xJe-XK-FYH"/>
+                        <outlet property="resultText" destination="cqp-xR-6yZ" id="YZ8-Lh-ibL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="33.283358320839582"/>
+        </scene>
+    </scenes>
+</document>
