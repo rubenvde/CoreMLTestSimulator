@@ -20,7 +20,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var resultText: UILabel!
   
-  let pickerData: [SelectableModel] = [("MobileNet", .mobileNet), ("Resnet50", .resnet50), ("Yolov3", .yolov3), ("Inceptionv3", .inceptionv3)]
+  let pickerData: [SelectableModel] = [("MobileNet", .mobileNet), ("Resnet50", .resnet50), ("Yolov3", .yolov3), ("Inceptionv3", .inceptionv3), ("Select All", .all)]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -68,6 +68,12 @@ class ViewController: UIViewController {
     case .inceptionv3:
       print("Inceptionv3 Choosen")
       predictInceptionv3UsingCoreML(image: image)
+    case .all:
+      print("Select All Choosen")
+      predictMobileNetUsingCoreML(image: image)
+      predictResNet50UsingCoreML(image: image)
+      predictYOLOUsingCoreML(image: image)
+      predictInceptionv3UsingCoreML(image: image)
     }
     
 //    predictInceptionv3UsingCoreML(image: image)
@@ -79,7 +85,7 @@ class ViewController: UIViewController {
   func predictInceptionv3UsingCoreML(image: UIImage) {
     let model = Inceptionv3()
     let resizeLog: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "ResizeOperations")
-    let testModel: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "TestModel")
+    let testModel: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "TestModel: Inceptionv3")
     os_signpost(.begin, log: resizeLog, name: "Resize Image")
     if let pixelBuffer = image.pixelBuffer(width: 299, height: 299) {
       os_signpost(.end, log: resizeLog, name: "Resize Image")
@@ -99,7 +105,7 @@ class ViewController: UIViewController {
   func predictResNet50UsingCoreML(image: UIImage) {
     let model = Resnet50()
     let resizeLog: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "ResizeOperations")
-    let testModel: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "TestModel")
+    let testModel: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "TestModel: ResNet50")
     os_signpost(.begin, log: resizeLog, name: "Resize Image")
     if let pixelBuffer = image.pixelBuffer(width: 224, height: 224) {
       os_signpost(.end, log: resizeLog, name: "Resize Image")
@@ -119,7 +125,7 @@ class ViewController: UIViewController {
   
   func predictYOLOUsingCoreML(image: UIImage) {
     let resizeLog: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "ResizeOperations")
-    let testModel: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "TestModel")
+    let testModel: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "TestModel: YOLO")
     os_signpost(.begin, log: resizeLog, name: "Resize Image")
     if let pixelBuffer = image.pixelBuffer(width: 416, height: 416) {
       os_signpost(.end, log: resizeLog, name: "Resize Image")
@@ -143,7 +149,7 @@ class ViewController: UIViewController {
   func predictMobileNetUsingCoreML(image: UIImage) {
     let model = MobileNet()
     let resizeLog: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "ResizeOperations")
-    let testModel: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "TestModel")
+    let testModel: OSLog = OSLog(subsystem: "nl.rubenatwork.CoreMLTestSimulator", category: "TestModel: MobileNet")
     os_signpost(.begin, log: resizeLog, name: "Resize Image")
     if let pixelBuffer = image.pixelBuffer(width: 224, height: 224) {
       os_signpost(.end, log: resizeLog, name: "Resize Image")

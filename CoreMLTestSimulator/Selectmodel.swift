@@ -13,4 +13,5 @@ enum Selectmodel {
   case resnet50
   case yolov3
   case inceptionv3
+  case all
 }
